@@ -14,10 +14,89 @@
 html{
     font-size: 62.5%;
 }
+body {
+    overflow-x: hidden;
+}
 
 /*section 1 (Navbar and Main Titling)*/
 .section-1 {
     width: 100%;
     height: 100vh;
     background-color: #fff; 
+    position: relative;
+}
+
+.floating-bg {
+    width: 150vw;
+    height: 150vw; 
+    background-color: rgba(50, 231, 255, .8);
+    position: absolute;
+    top: -120vw;
+    left: calc(50% - 75vw);
+    border-radius: 45%;
+    animation: rotate 15s infinite;
+}
+
+.floating-bg::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(50,231,255,0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 40%;
+    animation: rotate 30s infinite;
+}
+
+@keyframes rotate{
+    0% {
+        transform: rotate(0)
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.navbar {
+    position: relative;
+    z-index: 20;  
+    top: 4rem;
+    display: flex;
+    justify-content: space-evenly;  
+}
+
+.navbar-link {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: .2rem;
+    color: #fff;
+    width: 1.5rem;
+    word-wrap: break-word;
+    text-align: center;
+    transition: all 3.5s;
+}
+
+.navbar-link:hover {
+    width: 15rem;
+    transition: all 2.5s;
+}
+
+.section-1-heading {
+    font-size: 8rem;
+    font-family: "Monoton", cursive;
+    position: absolute;
+    top: 18vw;
+    left: 50%;
+    transform: translatex(-50%);
+    text-shadow: 0.3rem 0.3rem 0.3rem #888;
+    margin-top: 3rem;
+    color: #fff;
+    /*background-color: #fff; - may add background back*/
+    width: 85rem;
+    text-align: center;
+    padding: .8rem 1.6rem;
+    border-radius: 1rem;
+    opacity: .9;
 }
